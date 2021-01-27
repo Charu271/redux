@@ -1,14 +1,26 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Post from "./components/Post";
-import PostForm from "./components/PostForm";
+import { Provider } from "react-redux";
+import store from "./redux/store";
+import CakeContainer from "./components/cakeContainer";
+import IceCreamContainer from "./components/iceCreamContainer";
+import HooksCakeContainer from "./components/HooksCakeContainer";
+import CustomcakeContainer from "./components/CustomcakeContainer";
+import ItemContainer from "./components/ItemContainer";
+import UserContainer from "./components/userContainer";
 
 function App() {
   return (
-    <div className="App">
-      <PostForm />
-      <Post />
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <UserContainer />
+        <ItemContainer cake />
+        <ItemContainer />
+        <CakeContainer />
+        <HooksCakeContainer />
+        <IceCreamContainer />
+        <CustomcakeContainer />
+      </div>
+    </Provider>
   );
 }
 
